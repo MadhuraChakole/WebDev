@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebDev Infotech</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: white;
+      color: #c2c8d0;
+      line-height: 1.6;
+      padding-top: 70px;
+
+    }
+
+    .navigation {
+      background: white;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 85px;
+      width: 100%;
+      z-index: 999;
+      color: black;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1px;
+      margin-left: 5px;
+    }
+
+    .logo img {
+      height: 80px;
+      width: 130px;
+    }
+
+    .logo-title {
+      font-size: 32px;
+      color: #2487ce;
+      font-family: 'Poppins', sans-serif;
+      ;
+    }
+
+    .navigation ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    .navigation a {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+      position: relative;
+      padding: 5px 0;
+      transition: color 0.3s ease;
+      font-size: 18px;
+      font-weight: 300;
+    }
+
+    .navigation a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: -2px;
+      background-color: #2487ce;
+      transition: width 0.3s;
+    }
+
+    .navigation a:hover {
+      color: #2487ce;
+    }
+
+    .navigation a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      margin: 0 auto;
+      padding: 0;
+      max-width: 100%;
+    }
+
+    .slideshow-hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 1s ease-in-out;
+    }
+
+    .slideshow-overlay {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      /* overlay */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .slideshow-content {
+      color: white;
+      padding: 20px;
+    }
+
+    .slideshow-content h1 {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    .slideshow-content p {
+      font-size: 20px;
+    }
+
+    /* About Section */
+    .about-section {
+      padding: 120px 40px 30px 40px;
+      text-align: center;
+    }
+
+    .about-section h2 {
+      font-size: 36px;
+      color: #2487ce;
+      margin-bottom: 10px;
+    }
+
+    .about-section p.subtitle {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 40px;
+      text-align: justify;
+    }
+
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .about-left,
+    .about-right {
+      flex: 1 1 400px;
+      text-align: left;
+      color: black
+    }
+
+    .about-left p,
+    .about-right p {
+      margin-bottom: 20px;
+      line-height: 1.7;
+      color: black;
+      text-align: justify;
+    }
+
+    .about-left ul {
+      padding: 0;
+      list-style: none;
+    }
+
+    .about-left ul li {
+      margin-bottom: 12px;
+      font-size: 16px;
+    }
+
+    .about-left ul li i {
+      color: #2487ce;
+      margin-right: 10px;
+    }
+
+    .btn-readmore {
+      padding: 12px 25px;
+      background-color: #2487ce;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      display: inline-block;
+      margin-top: 2px;
+    }
+
+    .btn-readmore:hover {
+      background-color: #84bde6;
+    }
+
+    .stats {
+      background-color: #f9fbfd;
+      padding: 20px 20px 50px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .stat-box {
+      text-align: center;
+      flex: 1 1 200px;
+    }
+
+    .stat-box h3 {
+      font-size: 40px;
+      color: #2487ce;
+      margin-bottom: 5px;
+    }
+
+    .stat-box p {
+      color: #888;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .about-content {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .about-left,
+      .about-right {
+        text-align: center;
+      }
+
+      .about-left ul li {
+        justify-content: center;
+      }
+    }
+
+    /*carousel*/
+    .about-who-we-are {
+      padding: 60px 40px;
+      background-color: white;
+    }
+
+    .about-who-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: flex-start;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .about-background {
+      flex: 1 1 500px;
+      color: #333;
+    }
+
+    .about-background h2 {
+      font-size: 32px;
+      color: #2487ce;
+      margin-bottom: 20px;
+    }
+
+    .about-background p {
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .about-carousel {
+      flex: 1 1 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .about-carousel .carousel {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      height: 500px;
+    }
+
+    .about-carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-carousel .carousel-inner,
+    .about-carousel .carousel-item,
+    .about-carousel img {
+      height: 100%;
+      /* match fixed height */
+    }
+
+    /* Optional: Responsive */
+    @media (max-width: 768px) {
+      .about-who-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .about-background,
+      .about-carousel {
+        flex: 1 1 100%;
+      }
+
+      .about-carousel .carousel {
+        max-width: 100%;
+      }
+    }
+
+    /* team section*/
+    .team-section {
+      background-color: #f8fbfe;
+      /* Light blue background */
+    }
+
+    .team-section h2 {
+      color: #2487ce;
+      font-weight: 200;
+      font-size: 36px;
+    }
+
+    .team-card {
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      height: 100%;
+    }
+
+    .team-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .team-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .team-card h5 {
+      font-weight: 600;
+      color: #0b2e59;
+    }
+
+    .team-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    /* Services Section */
+    .services-section {
+      padding: 30px 10px;
+      text-align: center;
+      background-color: #FFFFFF;
+    }
+
+    .services-section h2 {
+      font-size: 36px;
+      color: #2487ce;
+      margin-top: 70px;
+      margin-bottom: 1px;
+    }
+
+.services-section p {
+  color: #333;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 700px;
+ margin-left: auto;
+ margin-right: auto;
+  padding-inline: 8px;
+}
+
+/* Optional enhancement: Style quotes */
+.services-section p q {
+  font-style: italic;
+  color: #6f5ecf; /* or any highlight color you like */
+  font-weight: 700;
+  quotes: "“" "”" "‘" "’";
+}
+
+
+    .service-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 35px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background-color: #8ec5fc;
+      padding: 10px 25px;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      background-color: rgb(173, 228, 250);
+    }
+
+    .service-icon img {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 18px;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover .service-icon img {
+      transform: scale(1.1);
+    }
+
+    .service-title {
+      font-size: 1.4rem;
+      color: #0056b3;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .service-desc {
+      font-size: 1rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+
+    /* ---------- Project Section ---------- */
+
+    .work-section {
+      padding: 110px 20px;
+      background: #FFFFFF;
+      text-align: center;
+    }
+
+    .work-section h2 {
+      font-size: 36px;
+      color: #2487ce;
+      margin-bottom: 50px;
+      font-weight: 500;
+      
+      position: relative;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      justify-items: center;
+    }
+
+    .project-card {
+      background: #8ec5fc;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 20px;
+      text-align: left;
+    }
+
+    .project-content h3 {
+      font-size: 20px;
+      margin: 10px 0 8px;
+      color: #003366;
+    }
+
+    .project-content p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 12px;
+    }
+
+    .tech-tags {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0;
+      margin: 0 0 15px 0;
+    }
+
+    .tech-tags li {
+      background: #e0e7ff;
+      color: #333;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 14px;
+      background: #354f69;
+      color: #8ac3fc;
+      text-decoration: none;
+      border-radius: 20px;
+      font-size: 14px;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: white;
+    }
+
+
+
+    /* CONTACT SECTION */
+    .contact {
+      padding: 40px 10px;
+      scroll-margin-top: 100px;
+    }
+
+    .contact-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      max-width: 1500px;
+      margin: 0 auto;
+      background-color: #FFFFFF;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .contact-heading {
+      font-size: 2.5rem;
+      color: #03465a;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .contact-section {
+      text-align: left;
+      padding: 20px;
+    }
+
+    .contact-text {
+      flex: 1;
+    }
+
+    .contact-text h2 {
+      color: #2487ce;
+      font-size: 36px;
+      margin: 0 0 40px;
+      padding-left: 150px;
+      text-align: center;
+    }
+
+    .contact-text p {
+      font-size: 20px;
+      color: #03465a;
+      padding-left: 90px;
+      margin-bottom: 0;
+    }
+
+
+
+    /* ICONS + FORM WRAPPER */
+    .icon-form-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 0 150px 40px;
+      gap: 50px;
+      background-color: #ffffff;
+      flex-wrap: wrap;
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    .icons_converted {
+      flex: 1;
+    }
+
+    .icons_converted ul {
+      font-size: 18px;
+      color: #03465a;
+      list-style-type: none;
+      line-height: 1.8;
+      padding-left: 0;
+    }
+
+    .social-icons {
+      margin-top: 20px;
+      padding-left: 0;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin-right: 15px;
+      font-size: 32px;
+      color: #03465a;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: rgb(133, 133, 167);
+      transform: scale(1.2);
+    }
+
+    /* FORM STYLING */
+    .form-section {
+      flex: 1;
+    }
+
+    form {
+      width: 450px;
+      background: #8ec5fc;
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 2px;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    form button {
+      padding: 10px 20px;
+      background-color: #03465a;
+      color: #8ec5fc;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    /* THUMBS-UP MESSAGE */
+    #thumbs-message {
+      display: none;
+      text-align: center;
+      font-size: 30px;
+      color: #03465a;
+      margin-top: 20px;
+    }
+
+    /* STAR RATING */
+    .rating-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .rating-wrapper h2 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .rating {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .rating input {
+      display: none;
+    }
+
+    .rating label {
+      font-size: 30px;
+      color: #03465a;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .rating input:checked~label,
+    .rating label:hover,
+    .rating label:hover~label {
+      color: yellow;
+    }
+
+    /* CTA */
+    .cta {
+      background-color: #FFFFFF;
+      text-align: center;
+      padding: 50px 20px;
+      margin-top: -20px;
+      border-top: 2px solid #8ec5fc;
+    }
+
+    .cta h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #03465a;
+    }
+
+    .cta button {
+      background-color: #03465a;
+      color: #8ec5fc;
+      font-size: 18px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta button:hover {
+      background-color: #ffffff;
+    }
+
+    /* POPUP */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup {
+      background: #dae7f5;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .popup h3 {
+      margin-top: 0;
+      font-size: 24px;
+      color: #03465a;
+    }
+
+    .popup p {
+      font-size: 18px;
+      color: #555;
+    }
+
+    .popup button {
+      margin-top: 20px;
+      background-color: #03465a;
+      color: #8ec5fc;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .popup .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 22px;
+      color: rgb(133, 133, 167);
+      cursor: pointer;
+    }
+
+    .popup .close-btn:hover {
+      color: rgb(133, 133, 167);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .contact {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .contact-text {
+        max-width: 100%;
+        margin-bottom: 20px;
+        padding-left: 0;
+      }
+
+      .icon-form-wrapper {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      form {
+        width: 90%;
+      }
+    }
+
+
+    /* General footer styling */
+    footer {
+      background-color: #03465a;
+      color: #fff;
+      padding: 40px 20px;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-container div {
+      flex: 1 1 200px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links ul li a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .footer-links ul li a:hover {
+      color: #fff;
+    }
+
+    .footer-socials {
+      margin-top: 10px;
+    }
+
+    .footer-socials h4 {
+      margin-bottom: 8px;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .social-icons img {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.2);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 20px;
+      border-top: 1px solid #333;
+      padding-top: 10px;
+      font-size: 14px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-links,
+      .footer-socials,
+      .footer-newsletter {
+        text-align: center;
+        margin-bottom: 20px;
+
+      }
+
+      .footer-newsletter input {
+        width: 90%;
+      }
+
+      .footer-bottom {
+        margin-top: 20px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="navigation">
+    <div class="logo">
+      <img src="home images/logo.jpg" alt="logo">
+      <div class="logo-title">WebDev Infotech</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Projects</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="header">
+    <section class="slideshow-hero">
+      <div class="slideshow-overlay">
+        <div class="slideshow-content">
+          <h1 id="slideshow-title">Welcome to WebDev Infotech</h1>
+          <p id="slideshow-subtext">We build stunning responsive websites for your business</p>
+        </div>
+      </div>
+    </section>
+    <script>
+
+      const slideshowImages = [
+        "home images/home-img-4.jpg",
+        "home images/home-img-1.jpg",
+        "home images/home-img-3.jpg",
+        "home images/home-img-2.jpg"
+      ];
+
+      const titles = [
+        "Welcome to WebDev Infotech",
+        "Responsive Web Design Experts",
+        "Your Digital Journey Starts Here",
+        "Design. Develop. Dominate."
+      ];
+
+      const subtexts = [
+        "We craft stunning, responsive websites tailored to elevate your brand and grow your business online.",
+        "Clean code. Elegant UI. Seamless experience.",
+        "Let’s build something amazing together!",
+        "We design with purpose, develop with precision, and help you dominate your market."
+      ];
+
+      let index = 0;
+      const hero = document.querySelector(".slideshow-hero");
+      const title = document.getElementById("slideshow-title");
+      const subtext = document.getElementById("slideshow-subtext");
+
+      function changeSlide() {
+        hero.style.backgroundImage = `url('${slideshowImages[index]}')`;
+        title.textContent = titles[index];
+        subtext.textContent = subtexts[index];
+        index = (index + 1) % slideshowImages.length;
+      }
+
+      changeSlide(); // initial
+      setInterval(changeSlide, 4000); // every 4 seconds
+    </script>
+
+  </div>
+  <!-- --------------------- About Section -------------------------------->
+  <section class="about-section" id="about">
+    <h2>ABOUT US</h2>
+    <p class="subtitle">
+      We are a passionate web development team focused on creating beautiful, fast, and functional websites for
+      businesses and individuals.
+      Every project is treated with precision, creativity, and a focus on performance.Beyond development, we invest time
+      in understanding your brand,
+      business model, and target audience — allowing us to create web
+      solutions that are not only visually appealing but also aligned with
+      your strategic goals.
+    <div class="about-content">
+      <div class="about-left">
+        <p>
+          At WebDev Infotech, we believe in building more than just websites we craft digital experiences that leave a
+          lasting impression. </p>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Clean, efficient code combined with modern, engaging design.</li>
+          <li><i class="fas fa-check-circle"></i> Responsive user experiences across all devices.</li>
+          <li><i class="fas fa-check-circle"></i> Tailored solutions for startups and established businesses.</li>
+        </ul>
+      </div>
+      <div class="about-right">
+        <p>
+          Our development process is rooted in clear communication, agile
+          methodologies, and on-time delivery. We maintain transparency at every
+          stage and focus on building long-term client relationships based on trust and results.
+          We continuously adapt to the latest technologies and web standards to
+          ensure your website remains fast, secure, scalable, and future-proof.
+        </p>
+        <a href="#contact" class="btn-readmore">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stat-box">
+      <h3 id="clients">0</h3>
+      <p>Clients</p>
+    </div>
+    <div class="stat-box">
+      <h3 id="projects">0</h3>
+      <p>Projects</p>
+    </div>
+    <div class="stat-box">
+      <h3 id="hours">0</h3>
+      <p>Hours Of Support</p>
+    </div>
+    <div class="stat-box">
+      <h3 id="workers">0</h3>
+      <p>Workers</p>
+    </div>
+  </section>
+
+  <script>
+    function animateCounter(id, target) {
+      let current = 0;
+      const speed = target / 100;
+
+      const interval = setInterval(() => {
+        current += speed;
+        if (current >= target) {
+          current = target;
+          clearInterval(interval);
+        }
+        document.getElementById(id).innerText = Math.floor(current);
+      }, 20);
+    }
+
+    // Animate on page load
+    window.addEventListener("load", () => {
+      animateCounter("clients", 101);
+      animateCounter("projects", 180);
+      animateCounter("hours", 1010);
+      animateCounter("workers", 30);
+    });
+  </script>
+  <section class="about-who-we-are">
+    <div class="about-who-container">
+      <div class="about-background">
+        <h2>Who We Are</h2>
+        <p>Founded in 2022, <strong>WebDev</strong> is a passionate team of developers, designers, and digital
+          strategists.
+          We craft modern, high-performing websites tailored to diverse business needs.
+          Our mission is to deliver web solutions that are visually impressive, fast, secure, and scalable.
+          At WebDev Infotech, we focus on responsive, user-centric digital experiences that drive engagement.
+          We follow clean coding practices and design intuitive UI/UX for all screen sizes.
+        </p>
+        <p>
+          At <strong>WebDev Infotech</strong>, we specialize in building responsive, user-centric digital experiences
+          that drive engagement and deliver real value. With a strong focus on clean coding practices and intuitive
+          UI/UX,
+          our team works closely with clients—from ambitious startups to established enterprises—to bring ideas to life
+          using the latest technologies and frameworks.
+        </p>
+      </div>
+
+      <div class="about-carousel">
+        <div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="about images/car1.jpg" class="d-block w-100" alt="Slide 1">
+            </div>
+            <div class="carousel-item">
+              <img src="about images/car2.jpg" class="d-block w-100" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+              <img src="about images/car3.jpg" class="d-block w-100" alt="Slide 3">
+            </div>
+            <div class="carousel-item">
+              <img src="about images/car4.jpg" class="d-block w-100" alt="Slide 4">
+            </div>
+            <div class="carousel-item">
+              <img src="about images/car5.jpg" class="d-block w-100" alt="Slide 5">
+            </div>
+            <div class="carousel-item">
+              <img src="about images/car6.jpg" class="d-block w-100" alt="Slide 6">
+            </div>
+
+            <div class="carousel-item">
+              <img src="about images/car7.jpg" class="d-block w-100" alt="Slide 7">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="about-block team-section py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Meet Our Team</h2>
+      <div class="row g-4">
+
+        <!-- Team Member 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="team-card text-center p-3 shadow rounded">
+            <img src="about images/team1.jpg" alt="Snehal Rao" class="img-fluid rounded">
+            <h5 class="mt-3 mb-1">Snehal Rao</h5>
+            <p class="text-muted">Frontend Developer</p>
+          </div>
+        </div>
+
+        <!-- Repeat for each team member -->
+        <div class="col-md-6 col-lg-3">
+          <div class="team-card text-center p-3 shadow rounded">
+            <img src="about images/team2.jpg" alt="Rohan P" class="img-fluid rounded">
+            <h5 class="mt-3 mb-1">Rohan P</h5>
+            <p class="text-muted">Backend Developer</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="team-card text-center p-3 shadow rounded">
+            <img src="about images/team7.jpg" alt="Eisha Singh" class="img-fluid rounded">
+            <h5 class="mt-3 mb-1">Eisha Singh</h5>
+            <p class="text-muted">UI/UX Designer</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="team-card text-center p-3 shadow rounded">
+            <img src="about images/team3.jpg" alt="Jayesh Shukla" class="img-fluid rounded">
+            <h5 class="mt-3 mb-1">Jayesh Shukla</h5>
+            <p class="text-muted">DevOps Engineer</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- --------------------- Services Section -------------------------------->
+  <section class="services-section" id="services">
+    <h2>OUR SERVICES</h2>
+   <section class="services-section">
+  <p>
+    We believe in delivering <q>performance-driven web solutions</q> that combine functionality with aesthetic appeal.
+  </p>
+</section>
+
+    <div class="services-grid">
+      <a href="web development.html" class="service-link">
+        <div class="service-card">
+          <div class="service-icon">
+            <img src="service images/devlopment.jpg" alt="Web Development" />
+          </div>
+          <h3 class="service-title">Web <br>Development</h3>
+          <p class="service-desc">Responsive, SEO-friendly websites crafted for speed, scalability, and clean
+            design.</p>
+        </div>
+      </a>
+
+      <a href="ui-ux.html" class="service-link">
+        <div class="service-card">
+          <div class="service-icon">
+            <img src="service images/ui.jpg" alt="UI/UX Design" />
+          </div>
+          <h3 class="service-title">UI/UX <br>Design</h3>
+          <p class="service-desc">User-first design with intuitive interfaces that drive engagement and conversions.</p>
+        </div>
+      </a>
+
+      <a href="project.html" class="service-link">
+        <div class="service-card">
+          <div class="service-icon">
+            <img src="service images/front.jpg" alt="Project Management" />
+          </div>
+          <h3 class="service-title">Project Management</h3>
+          <p class="service-desc">Streamlined planning and agile execution to deliver projects on time, within budget, and with excellence</p>
+        </div>
+      </a>
+
+      <a href="devops.html" class="service-link">
+        <div class="service-card">
+          <div class="service-icon">
+            <img src="service images/back.jpg" alt="DevOps Services" />
+          </div>
+          <h3 class="service-title">DevOps</h3>
+          <p class="service-desc">CI/CD pipelines, intelligent automation, and seamless cloud deployment to accelerate delivery</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- --------------------- Project Section -------------------------------->
+
+
+
+  <section id="work" class="work-section">
+    <h2>OUR PROJECTS</h2>
+    <div class="work-grid">
+
+      <div class="project-card">
+        <img src="work images/work-img-1.jpg" alt="Portfolio Website">
+        <div class="project-content">
+          <h3>Modern Portfolio Website</h3>
+          <p>Personal branding site with bio, resume, and project showcase.</p>
+          <ul class="tech-tags">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+          <a href="card1.html" class="btn">View Project</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="work images/work-img-2.png" alt="Restaurant Website">
+        <div class="project-content">
+          <h3>Restaurant Website</h3>
+          <p>Interactive site with live menu, booking, and reviews.</p>
+          <ul class="tech-tags">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JS</li>
+          </ul>
+          <a href="card2.html" class="btn">View Project</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="work images/work-img-3.jpg" alt="E-Commerce Website">
+        <div class="project-content">
+          <h3>E-Commerce Website</h3>
+          <p>Online shopping platform with secure checkout.</p>
+          <ul class="tech-tags">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>PHP</li>
+            <li>MySQL</li>
+          </ul>
+          <a href="card3.html" class="btn">View Project</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="work images/work-img-4.jpg" alt="Learning Platform">
+        <div class="project-content">
+          <h3>Online Learning Platform</h3>
+          <p>Education portal with video lessons, quizzes, and tracking.</p>
+          <ul class="tech-tags">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+          <a href="card4.html" class="btn">View Project</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- CONTACT SECTION -->
+
+  <section class="contact" id="contact">
+    <div class="contact-content">
+      <div class="contact-text">
+        <h2>CONTACT US</h2>
+        <p>Have a project in mind or just want to say hello? We’re here to help your business grow. Let’s
+          connect and make something awesome together.</p>
+      </div>
+
+    </div>
+
+    <div class="icon-form-wrapper">
+      <!-- Contact Info Icons -->
+      <div class="icons_converted">
+        <ul>
+          <li>📞 <strong>Phone:</strong> +123–456–7890</li>
+          <li>📧 <strong>Email:</strong> webdev@gmail.com</li>
+          <li>📍 <strong>Address:</strong> 411056 Pune Maharashtra</li>
+          <li>💬 <strong>Live Chat:</strong> Available Mon–Fri, 9am–5pm</li>
+          <li><strong style="color: #03465a;">We’re available Monday to Friday, 9:00 AM to 6:00 PM.</strong>
+          </li>
+        </ul>
+
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+
+        <div class="rating-wrapper">
+          <h2>Give us rating here :</h2>
+          <div class="rating">
+            <input type="radio" name="star" id="star5"><label for="star5">&#9733;</label>
+            <input type="radio" name="star" id="star4"><label for="star4">&#9733;</label>
+            <input type="radio" name="star" id="star3"><label for="star3">&#9733;</label>
+            <input type="radio" name="star" id="star2"><label for="star2">&#9733;</label>
+            <input type="radio" name="star" id="star1"><label for="star1">&#9733;</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="form-section">
+        <form id="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+          <input type="text" name="phone" placeholder="Phone Number">
+          <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        <div id="thumbs-message">👍 Thank you for reaching out!</div>
+      </div>
+    </div>
+  </section>
+
+
+  </div>
+
+  <div class="cta">
+    <h2>Have a project in mind? 👨‍💻</h2>
+    <button onclick="openPopup()">Start a Conversation</button>
+  </div>
+
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <h3>Let’s Talk!</h3>
+      <p>Drop your project idea on our mail and we’ll get back to you soon.</p>
+      <button onclick="closePopup()">Got it!</button>
+    </div>
+  </div>
+
+  <script>
+    function simpleThumbsUp() {
+      const msg = document.getElementById("thumbs-message");
+      msg.style.display = "block";
+      setTimeout(() => {
+        msg.style.display = "none";
+      }, 2000);
+      return false;
+    }
+
+    function openPopup() {
+      document.getElementById("popupOverlay").style.display = "flex";
+    }
+
+    function closePopup() {
+      document.getElementById("popupOverlay").style.display = "none";
+    }
+  </script>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <img src="" alt="">
+        <h2>WebDev</h2>
+        <br>
+        <p>Crafting Tomorrow’s Web, Today.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="home.html#about">About</a></li>
+          <li><a href="home.html#services">Services</a></li>
+          <li><a href="home.html#work">Projects</a></li>
+          <li><a href="home.html#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>Email: contact@webdev.com</p>
+        <p>Phone: +91 98765 43210</p>
+      </div>
+
+      <div class="footer-socials">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <img src="footer images/linkedin.png" alt="LinkedIn">
+          <img src="footer images/twitter.png" alt="Twitter">
+          <img src="footer images/social.png" alt="Social Media">
+          <img src="footer images/communication.png" alt="Contact">
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Moved outside the footer-container -->
+    <div class="footer-bottom">
+      <p>&copy; 2025 WebDev. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

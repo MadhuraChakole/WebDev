@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Development Services</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1;
+      background: #0b1536;
+      color: #222;
+      padding: 30px 20px;
+    }
+
+    header {
+      background: #0b1536;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    header h1 {
+      font-weight: 300;
+      font-size: 35px;
+      letter-spacing: 3px;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    nav a {
+      color: #97a6ba;
+      text-decoration: none;
+      font-weight: 500;
+      margin: 0 15px;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    main.service-container {
+      max-width: 1200px;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15);
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden;
+    }
+
+    .service-image {
+      flex: 1 1 50%;
+      min-height: auto;
+      max-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .service-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0;
+    }
+
+    .service-content {
+      flex: 1 1 50%;
+      padding: 40px;
+      color: #0b1536;
+    }
+
+    .service-content h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: #0b1536;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .service-content p.description {
+      font-size: 20px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: #535353;
+      font-weight: 200;
+    }
+
+    .service-content h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #0b1536;
+      font-weight: 600;
+      border-bottom: 3px solid #6f5ecf;
+      padding-bottom: 3px;
+      width: fit-content;
+    }
+
+    .service-content ul {
+      list-style: disc inside;
+      margin-bottom: 40px;
+      color: #6a6a6a;
+      font-size: 1.1rem;
+      line-height: 1;
+      font-weight: 500;
+    }
+
+    .service-content ul li {
+      margin-bottom: 10px;
+    }
+
+    .service-content p.tools {
+      font-style: italic;
+      color: #888;
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .apply-btn {
+      background: linear-gradient(45deg, #6f5ecf, #9186f7);
+      color: #fff;
+      font-weight: 600;
+      border: none;
+      padding: 14px 40px;
+      border-radius: 40px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background 0.4s ease;
+      box-shadow: 0 8px 20px rgba(111, 94, 207, 0.6);
+      display: inline-block;
+      margin-top: 20px;
+      letter-spacing: 0.8px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .apply-btn:hover {
+      background: linear-gradient(45deg, #5246b1, #7b6cf4);
+      box-shadow: 0 12px 30px rgba(82, 70, 177, 0.8);
+    }
+
+    @media (max-width: 768px) {
+      main.service-container {
+        flex-direction: column;
+      }
+
+      .service-image,
+      .service-content {
+        flex: 1 1 100%;
+        padding: 20px;
+      }
+
+      .service-image img {
+        height: auto;
+      }
+
+      .apply-btn {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 900px) {
+      main.service-container {
+        flex-direction: column;
+      }
+
+      .service-image {
+        border-radius: 12px 12px 0 0;
+        min-height: 280px;
+      }
+
+      .service-content {
+        padding: 35px 40px 45px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Web Development Services</h1>
+    <nav>
+      <a href="home.html">Home</a> |
+      <a href="home.html#about">About</a> |
+      <a href="home.html#services">Services</a> |
+      <a href="home.html#work">Project</a> |
+      <a href="home.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="service-container" aria-label="Web Development Service Details">
+    <div class="service-image">
+      <img src="service images/web deve.jpg" alt="Web Development tools and workflow image" />
+    </div>
+
+    <div class="service-content">
+      <h2>Custom Web Development</h2>
+      <p class="description">We build custom websites with performance, scalability, and modern design principles in
+        mind. Our solutions are built using the latest technologies like React, Vue, and Node.js, ensuring your website
+        is fast, reliable, and easy to maintain.</p>
+      <h3>Our Approach:</h3>
+      <ul>
+        <li>Responsive Design</li>
+        <li>Scalable Solutions</li>
+        <li>Optimized Performance</li>
+        <li>SEO-friendly Code</li>
+      </ul>
+      <h3>Technologies We Use</h3>
+      <p class="tools"> React, Vue.js, Node.js, Express, MongoDB, MySQL, and more.</p>
+
+      <a href="home.html#contact" class="apply-btn">Apply</a>
+    </div>
+  </main>
+</body>
+
+</html>

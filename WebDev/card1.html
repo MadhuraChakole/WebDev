@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modern Portfolio Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #e0c3fc, #8ec5fc);
+      color: #333;
+      padding: 20px;
+    }
+
+    header {
+      background: #fff;
+      padding: 25px 20px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    nav a {
+      margin: 0 12px;
+      color: #4a4a4a;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #6f42c1;
+    }
+
+    .service-details {
+      background: #ffffff;
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    .service-details h2 {
+      font-size: 2rem;
+      color: #4a148c;
+      margin-bottom: 20px;
+    }
+
+    .project-image {
+      width: 100%;
+      border-radius: 12px;
+      margin: 20px 0;
+      object-fit: cover;
+      max-height: 420px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .service-details p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .service-details h3 {
+      margin-top: 30px;
+      margin-bottom: 15px;
+      color: #333;
+      font-size: 1.3rem;
+    }
+
+    ul.features {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul.features li {
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+
+    ul.features li i {
+      color: #6f42c1;
+      margin-right: 10px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 8px 6px;
+      }
+
+      .service-details {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Modern Portfolio Website</h1>
+    <nav>
+      <a href="home.html">Home</a> |
+      <a href="home.html#about">About</a> |
+      <a href="home.html#services">Services</a> |
+      <a href="home.html#work">Projects</a> |
+      <a href="home.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="service-details">
+    <img src="work images/work-img-1.jpg" alt="Modern Portfolio Screenshot" class="project-image">
+
+    <h2>Project Overview</h2>
+    <p>The <strong>Modern Portfolio Website</strong> is a stylish and responsive personal website built for professional branding. It showcases a detailed bio, interactive project sections, and downloadable resume options.</p>
+
+    <h3>✨ Technology Stack</h3>
+    <ul class="features">
+      <li><i class="fas fa-code"></i> HTML5</li>
+      <li><i class="fab fa-css3-alt"></i> CSS3 (Animations & Grid Layouts)</li>
+      <li><i class="fab fa-js"></i> JavaScript (Interactivity & Smooth Scrolling)</li>
+    </ul>
+
+    <h3>📌 Key Features</h3>
+    <ul class="features">
+      <li><i class="fas fa-scroll"></i> Smooth navigation scroll</li>
+      <li><i class="fas fa-images"></i> Animated gallery for projects</li>
+      <li><i class="fas fa-file-download"></i> Downloadable resume option</li>
+      <li><i class="fas fa-user"></i> Clean and modern UI/UX</li>
+      <li><i class="fas fa-laptop-code"></i> Fully responsive design for all devices</li>
+    </ul>
+
+    <h3>🎯 Purpose</h3>
+    <p>This project is tailored to represent a professional online identity. Whether you're a student, developer, designer, or freelancer, it helps highlight your strengths and work beautifully.</p>
+
+    <h3>🚀 Outcome</h3>
+    <p>Successfully deployed and reviewed by mentors, this portfolio delivers a strong first impression to clients and hiring managers. It reflects personal creativity and coding skills.</p>
+  </section>
+
+</body>
+</html>

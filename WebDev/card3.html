@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>E-Commerce Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #f8e7e0, #d4d4f9);
+      color: #333;
+      padding: 20px;
+    }
+
+    header {
+      background: #fff;
+      padding: 25px 20px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    nav a {
+      margin: 0 12px;
+      color: #4a4a4a;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #6f42c1;
+    }
+
+    .service-details {
+      background: #ffffff;
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    .service-details h2 {
+      font-size: 2rem;
+      color: #4a148c;
+      margin-bottom: 20px;
+    }
+
+    .project-image {
+      width: 100%;
+      border-radius: 12px;
+      margin: 20px 0;
+      object-fit: cover;
+      max-height: 420px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .service-details p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .service-details h3 {
+      margin-top: 30px;
+      margin-bottom: 15px;
+      color: #333;
+      font-size: 1.3rem;
+    }
+
+    ul.features {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul.features li {
+      margin-bottom: 12px;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+    }
+
+    ul.features li i {
+      color: #6f42c1;
+      margin-right: 12px;
+      min-width: 20px;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 8px 6px;
+      }
+
+      .service-details {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>E-Commerce Website</h1>
+    <nav>
+      <a href="home.html">Home</a> |
+      <a href="home.html#about">About</a> |
+      <a href="home.html#services">Services</a> |
+      <a href="home.html#work">Projects</a> |
+      <a href="home.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="service-details">
+    <img src="work images/work-img-3.jpg" alt="E-Commerce Website Screenshot" class="project-image" />
+
+    <h2>Online Shopping Platform</h2>
+    <p>The <strong>E-Commerce Website</strong> delivers a seamless and secure online shopping experience featuring smooth product browsing, cart and wishlist functionality, and a robust admin panel for store management.</p>
+
+    <h3>✨ Technology Stack</h3>
+    <ul class="features">
+      <li><i class="fas fa-code"></i> HTML5 & CSS3</li>
+      <li><i class="fab fa-js"></i> JavaScript (Frontend Interactivity)</li>
+      <li><i class="fab fa-node-js"></i> Node.js (Backend & APIs)</li>
+      <li><i class="fas fa-database"></i> MongoDB / SQL (Database Management)</li>
+    </ul>
+
+    <h3>📌 Key Features</h3>
+    <ul class="features">
+      <li><i class="fas fa-shopping-cart"></i> Cart and wishlist functionality for easy product management</li>
+      <li><i class="fas fa-lock"></i> Secure and encrypted checkout process</li>
+      <li><i class="fas fa-user-cog"></i> Admin panel with product, order, and user management</li>
+      <li><i class="fas fa-mobile-alt"></i> Fully responsive design optimized for mobile and desktop</li>
+      <li><i class="fas fa-rocket"></i> Fast load times with optimized backend queries</li>
+    </ul>
+
+    <h3>🎯 Purpose</h3>
+    <p>This project is built to help businesses launch scalable e-commerce platforms with intuitive user interfaces and powerful backend support to handle high traffic and transactions smoothly.</p>
+
+    <h3>🚀 Outcome</h3>
+    <p>Deployed a fully functional e-commerce solution that improves customer engagement and business operations, successfully tested for security and performance.</p>
+  </section>
+
+</body>
+</html>
